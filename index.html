@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pop Up com Senha</title>
+  <style>
+    .lugarDoPopUp {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 80vh;
+    }
+
+    #popup-container {
+      display: none;
+      background-color: white;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
+      max-width: 80%;
+      width: 250px;
+      text-align: center;
+    }
+
+    button {
+      padding: 8px 16px;
+      background-color: #007bff;
+      border: none;
+      border-radius: 5px;
+      color: white;
+      cursor: pointer;
+    }
+
+    input {
+      width: 80%;
+      padding: 8px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+
+<body>
+  <button id="show-popup">Mostrar Pop-up</button>
+
+  <div class="lugarDoPopUp">
+    <div id="popup-container">
+      <h2>Digite sua senha:</h2>
+      <input type="password" id="password-input">
+      <button id="submit-password">Enviar</button>
+    </div>
+  </div>
+
+  <script>
+    const showPopupButton = document.getElementById('show-popup');
+    const popupContainer = document.getElementById('popup-container');
+    const passwordInput = document.getElementById('password-input');
+    const submitPasswordButton = document.getElementById('submit-password');
+
+    showPopupButton.addEventListener('click', () => {
+      popupContainer.style.display = 'block';
+    });
+
+    submitPasswordButton.addEventListener('click', () => {
+      const enteredPassword = passwordInput.value;
+
+      // Aqui você pode fazer o que quiser com a senha, como validar, enviar para um servidor, etc.
+      alert('Senha digitada: ' + enteredPassword);
+      popupContainer.style.display = 'none';
+    });
+  </script>
+</body>
+
+</html>
